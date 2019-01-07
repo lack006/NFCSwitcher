@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NFC 开关</string>
+    <string name="introduction">本程序能够提供一个快捷设置图块监测并开关 NFC 。</string>
+    <string name="hide_icon">在启动器中隐藏图标</string>
+    <string name="nfc_on">NFC 开启</string>
+    <string name="nfc_off">NFC 关闭</string>
+    <string name="need_root">本程序需要 ROOT 权限实现以上功能</string>
+    <string name="exit">明白了，退出</string>
+    <string name="uninstall">如果需要卸载本软件，请长按快捷设置图块进行卸载。</string>
+    <string name="error">发生错误</string>
+</resources>

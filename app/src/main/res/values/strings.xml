@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NFC Switcher</string>
+    <string name="introduction">This software will add a tile at Quick Setting to switch the NFC ON/OFF.</string>
+    <string name="need_root">Need root permission</string>
+    <string name="hide_icon">Hide icon from Launcher</string>
+    <string name="nfc_on">NFC ON</string>
+    <string name="nfc_off">NFC OFF</string>
+    <string name="exit">Got it and Exit</string>
+    <string name="uninstall">If you want to Uninstall.Please Press the Quick Settings Tile and click Uninstall.</string>
+    <string name="error">Something Wrong!</string>
+</resources>
