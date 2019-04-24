@@ -7,5 +7,6 @@
     <string name="nfc_off">NFC OFF</string>
     <string name="exit">Got it and Exit</string>
     <string name="uninstall">If you want to Uninstall.Please Press the Quick Settings Tile and click Uninstall.</string>
-    <string name="error">Something Wrong!</string>
+    <string name="error">Something Wrong</string>
+    <string name="error_no_root">Please check your Root Permission!</string>
 </resources>

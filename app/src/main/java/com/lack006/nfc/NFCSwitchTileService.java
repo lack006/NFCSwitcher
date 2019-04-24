@@ -7,6 +7,8 @@ import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class NFCSwitchTileService extends TileService {
 
     public NFCSwitchTileService() {
@@ -52,30 +54,33 @@ public class NFCSwitchTileService extends TileService {
 
     @Override
     public void onClick() {
-        boolean isSucceed;
+        List list;
 
         Tile tile = getQsTile();
         if (tile.getState() == Tile.STATE_ACTIVE) {
-            isSucceed = Util.NFCOff();
-            if (isSucceed) {
-                tile.setState(Tile.STATE_INACTIVE);
-                tile.setLabel(getString(R.string.nfc_off));
-                tile.setIcon(Icon.createWithResource(getApplicationContext(),
-                        R.mipmap.ic_nfc_grey));
-            } else {
-                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
+            list = Util.NFCOff();
+            if (list != null) {
+                if (list.isEmpty()) {
+                    tile.setState(Tile.STATE_INACTIVE);
+                    tile.setLabel(getString(R.string.nfc_off));
+                    tile.setIcon(Icon.createWithResource(getApplicationContext(),
+                            R.mipmap.ic_nfc_grey));
+                } else {
+                    Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
+                }
+            }else{
+                Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
             }
 
         } else {
-
-            isSucceed = Util.NFCOn();
-            if (isSucceed) {
+            list = Util.NFCOn();
+            if (list.isEmpty()) {
                 tile.setState(Tile.STATE_ACTIVE);
                 tile.setLabel(getString(R.string.nfc_on));
                 tile.setIcon(Icon.createWithResource(getApplicationContext(),
                         R.mipmap.ic_nfc_white));
             } else {
-                Toast.makeText(this, R.string.error, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
             }
 
         }

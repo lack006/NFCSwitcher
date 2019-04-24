@@ -22,13 +22,13 @@ class Util {
 
     }
 
-    static boolean NFCOn() {
+    static List NFCOn() {
         List<String> list = Shell.SU.run(Commands.NFC_ON_SHELL);
-        return list.isEmpty();
+        return list;
     }
 
-    static boolean NFCOff() {
+    static List NFCOff() {
         List<String> list = Shell.SU.run(Commands.NFC_OFF_SHELL);
-        return list.isEmpty();
+        return list;
     }
 }
