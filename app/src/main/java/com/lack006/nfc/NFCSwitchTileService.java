@@ -59,16 +59,12 @@ public class NFCSwitchTileService extends TileService {
         Tile tile = getQsTile();
         if (tile.getState() == Tile.STATE_ACTIVE) {
             list = Util.NFCOff();
-            if (list != null) {
-                if (list.isEmpty()) {
-                    tile.setState(Tile.STATE_INACTIVE);
-                    tile.setLabel(getString(R.string.nfc_off));
-                    tile.setIcon(Icon.createWithResource(getApplicationContext(),
-                            R.mipmap.ic_nfc_grey));
-                } else {
-                    Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
-                }
-            }else{
+            if (list.isEmpty()) {
+                tile.setState(Tile.STATE_INACTIVE);
+                tile.setLabel(getString(R.string.nfc_off));
+                tile.setIcon(Icon.createWithResource(getApplicationContext(),
+                        R.mipmap.ic_nfc_grey));
+            } else {
                 Toast.makeText(this, getResources().getString(R.string.error) + "\n" + list.get(0), Toast.LENGTH_LONG).show();
             }
 

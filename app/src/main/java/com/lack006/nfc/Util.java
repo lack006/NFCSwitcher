@@ -4,9 +4,11 @@ import android.content.Context;
 import android.nfc.NfcAdapter;
 import android.nfc.NfcManager;
 
+import com.topjohnwu.superuser.Shell;
+
 import java.util.List;
 
-import eu.chainfire.libsuperuser.Shell;
+
 
 class Util {
 
@@ -23,12 +25,10 @@ class Util {
     }
 
     static List NFCOn() {
-        List<String> list = Shell.SU.run(Commands.NFC_ON_SHELL);
-        return list;
+        return Shell.su(Commands.NFC_ON_SHELL).exec().getOut();
     }
 
     static List NFCOff() {
-        List<String> list = Shell.SU.run(Commands.NFC_OFF_SHELL);
-        return list;
+        return Shell.su(Commands.NFC_OFF_SHELL).exec().getOut();
     }
 }
